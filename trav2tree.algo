@@ -1,0 +1,22 @@
+John Liu
+APCS2 pd8
+HW #41: A Tree Grows in 251
+2018-04-30
+
+In order to reconstruct a binary tree, you need atleast 2 traversals. 
+
+If you have the pre and inorder traversals, you can tell what the middle and left most elements are. The root and its left child are the 
+first 2 elements in the preorder traversals and everything to the left of the root in the inorder traversal is in the left branch and 
+everything to the right of the root is in the right branch. Then you can split up the 2 branches in the preorder traversal recursively 
+sovle the each branch using the pre and inorder traversals. 
+
+If you have the post and inorder traversals, you can tell what the middle and left most elements are. The first and last elements of the 
+postorder traversal are the left most element and root respectively. The second to last element in the postorder traversal is the right 
+child, and you can split up the inorder traversal into the left and right branches, then solve recursively using the post and inorder 
+traversal
+
+If you ahve the pre and postorder traversal, you know the first and left most element and left and right child. The second element in the 
+preorder traversal is the left child, and you can divide the postorder traversal into 3 parts, from the begining to the left child, the 
+element after the left child to the right child, and the root. You can do the same for the preorder traversal, by isolating the root, the 
+second element and to the element before the right child, and from the right child to the end. Then recursively solve each section. If 
+there is only 1 branch, then you can not tell if it is the right or left branch without the inorder traversal.
